@@ -7,10 +7,12 @@ const estudantes = [
     { nome: 'Paulo', notas: [100, 100, 100] },
 ];
 // 2. Aqui serão mapeadas as médias de todos os `estudantes`
+// 2.1. `estudante` se torna o estudante atual
 const estudantesMedias = estudantes.map((estudante) => {
     // 3. Variável `total` será usada mais tarde para efetuar o cálculo da média
     // 3.1.1. Acessando as notas do estudante e aplicando o `reduce` teremos os valores acumulados
-    // em `soma` enquanto a `nota` se refere ao índice da nota
+    // em `soma` enquanto a `nota` se refere ao índice da nota.
+    // 4. `estudante` é importante, é por ele que podemos acessar as notas que foram mapeadas
     const total = estudante.notas.reduce((soma, nota) => soma + nota);
     // 4.1. Armazenando o nome do estudante em uma variável a parte
     let {nome} = estudante;
@@ -21,6 +23,7 @@ const estudantesMedias = estudantes.map((estudante) => {
 // 5. O método `filter` filtra o Objeto/Array baseado em alguma condição
 // nesse caso apenas o estudantes que possuírem média ácima de 90 serão
 const melhoresMedias = estudantesMedias.filter(
+    // 5.1. O princípio é parecido, acessamos o atributo média em `student` e realizamos a comparação
     (student) => student.media > 90,
 );
 // console.log(melhoresMedias); {nome: Paulo, media: 100}
