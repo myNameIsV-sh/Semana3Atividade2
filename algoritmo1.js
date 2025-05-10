@@ -28,7 +28,8 @@ new Array(tamanho).fill(null)
     // 4.1. Entretanto, no método `map` como não há retorno claro aqui,
     //  todo o Array será preenchido com números 1.
     // 4.1.1 `+1` é um operador unário de adição, na prática o interpretador tenta converter o valor
-    // para um inteiro, porém, como esse valor já é inteiro, então não acontece nada.
+    // para um inteiro, porém, como esse valor já é inteiro, então não acontece nada. `item` representa
+    // o valor atual, enquanto o `index` a posição desse valor
     .map((item, index) => + 1)
     // 4.2. E aqui os valores serão reduzidos em para um só
     .reduce((acumulador, item) => acumulador + item); // 1
